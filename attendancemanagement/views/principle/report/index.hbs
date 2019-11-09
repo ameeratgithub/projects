@@ -1,0 +1,27 @@
+<div class="row">
+    <br/>
+    <div class="card col s8 m8 l8 offset-s2 offset-m2 offset-l2">
+        {{>file}}
+        <h1 class="card-title center-align"> Absence Report</h1>
+        <div class="card-content">
+            <div class="row">
+                <div class="input-field col s4 m4 l4 offset-l1 offset-m1">
+                    <input type="text" id="initialdate" class="datepicker"/>
+                    <label for="initialdate">
+                        Initial Date
+                    </label>
+                </div>
+                <div class="input-field col s4 m4 l4 ">
+                    <input type="text" id="finaldate" class="datepicker"/>
+                    <label for="finaldate">
+                        Final Date
+                    </label>
+                </div>
+            </div>
+            <div id="reportTemplate">
+
+            </div>
+        </div>
+    </div>
+    <script src="/js/principle/report/index.js"></script>
+</div>

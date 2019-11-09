@@ -1,0 +1,42 @@
+<div>
+    <style scoped="scoped">
+    </style>
+    <div class="row">
+        <br/>
+        <div class="card col s8 m8 l8 offset-s2 offset-m2 offset-l2">
+            <h1 class="card-title center-align">Show Student Attendance<a href="/teacher/studentabsence/record" class="btn cyan lighten-2 right" style="margin-right: 40px">Record</a></h1>
+            <div class="card-content">
+                    <div class="row">
+                        <div class="input-field col s4 m4 l4">
+                            <select id="chooseCourses">
+                                <option value="" disabled="disabled" selected="selected"> Select Course
+                                </option>
+                            </select>
+                            <label for="chooseCourses">
+                                Please Select Course
+                            </label>
+                        </div>
+                        <div class="input-field col s4 m4 l4 offset-s2 offset-m2 offset-l2">
+                            <input id="attendancedate" type="text" class="datepicker"/>
+                            <label for="attendancedate">
+                                Choose Date
+                            </label>
+                        </div>
+                    </div>
+                <form method="post" action="/teacher/studentabsence/record">
+                    <div id="studentTemplate">
+
+                    </div>
+                    <div class="row">
+                        <div class="col offset-l5 offset-m5">
+                            <button type="submit" class="btn blue">
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/teacher/show.js"></script>
+</div>

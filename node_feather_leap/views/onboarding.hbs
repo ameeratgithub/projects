@@ -1,0 +1,248 @@
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Leap Bootstrap Theme and HTML Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A corporate Bootstrap theme by Medium Rare">
+        <link href="assets/css/loaders/loader-typing.css" rel="stylesheet" type="text/css" media="all">
+        <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all">
+        <link rel="preload" as="font" href="assets/fonts/Inter-UI-upright.var.woff2" type="font/woff2"
+            crossorigin="anonymous">
+        <link rel="preload" as="font" href="assets/fonts/Inter-UI.var.woff2" type="font/woff2" crossorigin="anonymous">
+    </head>
+
+    <body data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0" class="loaded">
+        <script id="__bs_script__">//<![CDATA[
+            document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+        <script async="" src="/browser-sync/browser-sync-client.js?v=2.26.7"></script>
+
+        <div class="loader">
+            <div class="loading-animation"></div>
+        </div>
+        <section class="min-vh-100 py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-md-6">
+                    <div class="col-auto">
+                        <a href="index.html">
+                            <img src="assets/img/feather_dark.png" alt="Leap">
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center pt-6">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="text-center mb-4">
+                            <h1 class="mb-2">Get Started</h1>
+                            <span>Setup your public Feather profile</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+
+                        <form class="wizard sw-main sw-theme-default" method="post" action="/onboarding"
+                            enctype="multipart/form-data">
+                            <ul class="d-flex step-circles justify-content-center mb-5 nav nav-tabs step-anchor">
+                                <li class="nav-item done"><a class="nav-link btn" href="#step-1">1</a>
+                                </li>
+                                <li class="nav-item done"><a class="nav-link btn" href="#step-2">2</a>
+                                </li>
+                                <li class="nav-item active"><a class="nav-link btn" href="#step-3">3</a>
+                                </li>
+                            </ul>
+                            <div class="sw-container tab-content" style="min-height: 199.25px;">
+                                <div id="step-1" class="active tab-pane step-content" style="display: none;">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-4 col-lg-5 col-md-6">
+                                            {{#if error}}
+                                            <div class="alert alert-danger alert-dismissible fade show">
+                                                <strong>Error!</strong> {{error}}
+                                                <button type="button" class="close"
+                                                    data-dismiss="alert">&times;</button>
+                                            </div>
+                                            {{/if}}
+                                            <div class="form-group">
+                                                <input type="text" name="tagline" class="form-control"
+                                                    placeholder="Tagline"><small class="text-muted">For example:
+                                                    Developer @ Google</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="areaOfExpertise" class="form-control"
+                                                    placeholder="Area of expertise">
+                                                <small class="text-muted">Only one keyword and as generic as possible
+                                                    for example: Computers</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="custom-select" name="color">
+                                                    <option value="" selected>Color</option>
+                                                    <option value="red">Red</option>
+                                                    <option value="blue">Blue</option>
+                                                    <option value="green">Green</option>
+                                                </select>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" class="injected-svg icon"
+                                                    data-src="assets/img/icons/interface/arrow-caret.svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <path
+                                                        d="M14.4444 8.41358C14.7776 8.2281 15.1875 8.46907 15.1875 8.85048V15.1495C15.1875 15.5309 14.7776 15.7719 14.4444 15.5864L8.78505 12.4369C8.44258 12.2463 8.44258 11.7537 8.78505 11.5631L14.4444 8.41358Z"
+                                                        fill="#212529"></path>
+                                                </svg>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="greetViewers" class="form-control"
+                                                    placeholder="Greet viewers ">
+                                                <small class="text-muted">Example: I am John, and I like to</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="things" name="things" placeholder="The things you do">
+                                                <small class="text-muted">example: Develop, Hike, Travel, Sleep</small>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" class="buttonText" name="buttonText" class="form-control"
+                                                    placeholder="Button text">
+                                                <small class="text-muted">example: Send me a message</small>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" class="buttonURL" class="form-control"
+                                                    placeholder="Button URL" name="buttonUrl">
+                                                <small class="text-muted">https://www.twitter.com/john or
+                                                    mailto:john@appleseed.com</small>
+                                            </div><button
+                                                class="btn btn-primary sw-btn-next btn-block disabled">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step-2" class="tab-pane step-content" style="display: none;">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-4 col-lg-5 col-md-6">
+                                            <div class="form-group">
+                                                <small class="text-muted">Only fill in your username if needed. Input is
+                                                    not required.</small>
+                                                <input type="text" name="instagram" class="form-control"
+                                                    placeholder="Instagram">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="twitter" class="form-control"
+                                                    placeholder="Twitter">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="github" class="form-control"
+                                                    placeholder="Github">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="linkedin" class="form-control"
+                                                    placeholder="LinkedIn">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="telegram" class="form-control"
+                                                    placeholder="Telegram">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" name="facebook" class="form-control"
+                                                    placeholder="Facebook">
+                                            </div>
+
+                                            <hr>
+                                            <div>
+                                                <div class="custom-control custom-switch">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                        name="isEmailPublic" id="customSwitch1">
+                                                    <label class="custom-control-label" for="customSwitch1">Add my email
+                                                        address to my public profile</label>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <button class="btn btn-primary sw-btn-next btn-block disabled">Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="step-3" class="tab-pane step-content" style="display: block;">
+                                    <div class="row justify-content-center">
+                                        <div class="col-xl-4 col-lg-5 col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="input-group-example">Add avatar:</label>
+                                                <input type="file" name="avatar" class="input" accept="image/*">
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Your story and/or bio"
+                                                    rows="5" name="bio"></textarea>
+                                            </div>
+                                            <button class="btn btn-primary btn-block" type="submit">Complete
+                                                Signup</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Required vendor scripts (Do not remove) -->
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+
+        <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
+
+        <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+        <script type="text/javascript" src="assets/js/aos.js"></script>
+        <!-- Clipboard (copies content from browser into OS clipboard) -->
+        <script type="text/javascript" src="assets/js/clipboard.js"></script>
+        <!-- Fancybox (handles image and video lightbox and galleries) -->
+        <script type="text/javascript" src="assets/js/jquery.fancybox.min.js"></script>
+        <!-- Flatpickr (calendar/date/time picker UI) -->
+        <script type="text/javascript" src="assets/js/flatpickr.min.js"></script>
+        <!-- Flickity (handles touch enabled carousels and sliders) -->
+        <script type="text/javascript" src="assets/js/flickity.pkgd.min.js"></script>
+        <!-- Ion rangeSlider (flexible and pretty range slider elements) -->
+        <script type="text/javascript" src="assets/js/ion.rangeSlider.min.js"></script>
+        <!-- Isotope (masonry layouts and filtering) -->
+        <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+        <!-- jarallax (parallax effect and video backgrounds) -->
+        <script type="text/javascript" src="assets/js/jarallax.min.js"></script>
+        <script type="text/javascript" src="assets/js/jarallax-video.min.js"></script>
+        <script type="text/javascript" src="assets/js/jarallax-element.min.js"></script>
+        <!-- jQuery Countdown (displays countdown text to a specified date) -->
+        <script type="text/javascript" src="assets/js/jquery.countdown.min.js"></script>
+        <!-- jQuery smartWizard facilitates steppable wizard content -->
+        <script type="text/javascript" src="assets/js/jquery.smartWizard.min.js"></script>
+        <!-- Plyr (unified player for Video, Audio, Vimeo and Youtube) -->
+        <script type="text/javascript" src="assets/js/plyr.polyfilled.min.js"></script>
+        <!-- Prism (displays formatted code boxes) -->
+        <script type="text/javascript" src="assets/js/prism.js"></script>
+        <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+        <script type="text/javascript" src="assets/js/scrollMonitor.js"></script>
+        <!-- Smooth scroll (animation to links in-page)-->
+        <script type="text/javascript" src="assets/js/smooth-scroll.polyfills.min.js"></script>
+        <!-- SVGInjector (replaces img tags with SVG code to allow easy inclusion of SVGs with the benefit of inheriting colors and styles)-->
+        <script type="text/javascript" src="assets/js/svg-injector.umd.production.js"></script>
+        <!-- TwitterFetcher (displays a feed of tweets from a specified account)-->
+        <script type="text/javascript" src="assets/js/twitterFetcher_min.js"></script>
+        <!-- Typed text (animated typing effect)-->
+        <script type="text/javascript" src="assets/js/typed.min.js"></script>
+        <!-- Required theme scripts (Do not remove) -->
+        <script type="text/javascript" src="assets/js/theme.js"></script>
+        <!-- Removes page load animation when window is finished loading -->
+        <script type="text/javascript">
+            window.addEventListener("load", function () {
+                document.querySelector('body').classList.add('loaded');
+            });
+        </script>
+
+
+
+
+    </body>
+
+</html>

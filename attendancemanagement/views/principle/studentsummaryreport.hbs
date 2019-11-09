@@ -1,0 +1,38 @@
+<div class="row">
+    <br/>
+
+    <div class="card col s8 m8 l8 offset-s2 offset-m2 offset-l2">
+
+        {{>file}}
+        <h1 class="card-title center-align"> Student Absence </h1>
+        <div class="card-content">
+            <div id="courseTemplate" class="row">
+                <div class="input-field col s3 m3 l3">
+                    <select id="chooseGrades">
+                        <option value="" disabled="disabled" selected="selected"> Select Grade
+                        </option>
+                    </select>
+                    <label for="chooseGrades">
+                        Please Select Grade
+                    </label>
+                </div>
+                <div class="input-field col s2 m2 l2 offset-l1 offset-m1">
+                    <input type="text" id="initialdate" class="datepicker"/>
+                    <label for="initialdate">
+                        Initial Date
+                    </label>
+                </div>
+                <div class="input-field col s2 m2 l2 ">
+                    <input type="text" id="finaldate" class="datepicker"/>
+                    <label for="finaldate">
+                        Final Date
+                    </label>
+                </div>
+            </div>
+            <div id="studentTemplate">
+
+            </div>
+        </div>
+    </div>
+    <script src="/js/principle/summary/student.js"></script>
+</div>

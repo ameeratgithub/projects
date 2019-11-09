@@ -1,0 +1,26 @@
+
+<form method="post" action="/login">
+    <br/>
+    <div class="row">
+        <div class="card col s6 m6 l6 offset-s3 offset-m3 offset-l3">
+            <span class="card-title teal-text"><h4 class="center-align">Login to System</h4></span>
+            <div class="card-content" style="padding: 40px">
+                <form action="/users/login" method="post">
+
+                    <div class="input-field">
+                        <input type="email" id="email" name="email" required="required"/>
+                        <label for="email">Enter Email : </label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" name="password" required="required"/>
+                        <label for="password">Enter Password : </label>
+                    </div>
+                    <br/>
+                    <div class="center-align">
+                        <button type="submit" class="btn btn-default">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html ng-app="drag-and-drop">
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Drag & Drop: Multiple listsr</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css" rel="stylesheet"
+        type="text/css" />
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="angular-dragdrop.js"></script>
+    <script src="app.js"></script>
+    <style>
+        .row {
+            margin: 20px 0 0 0;
+            padding: 0;
+        }
+
+        .list-group {
+            padding-bottom: 42px;
+            padding-right: 0;
+        }
+
+        .list-group-item {
+            border-radius: 5px;
+            cursor: move;
+        }
+
+        .list-group-item:first-child {
+            cursor: default;
+        }
+
+        .list-group-item:first-child span:first-child {
+            cursor: pointer;
+        }
+
+        .list-group-item:first-child span.glyphicon {
+            cursor: pointer;
+        }
+        #defaultList{
+            height: 450px;
+            overflow: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="oneCtrl">
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-6">
+                <button class="btn btn-primary" ng-click="addList()">Add new group</button>
+            </div>
+        </div>
+        <div class="row">			
+            <div class="col-sm-3" style="margin-left:3%">
+                <div class="list-group" id="defaultList" ng-model="defaultList" data-drop="true" data-jqyoui-options="{accept: '.list-group-item'}" jqyoui-droppable="{multiple:true}">
+                    <a href="#" class="list-group-item active">Users</a>
+                    <a ng-model="defaultList" ng-repeat="item in defaultList"  jqyoui-draggable="{index: {{$index}},animate:true,onStop: stopDrag(-1, item)}"
+                        href="javascript:;" data-id="{{item.id}}" data-drag="true" class="list-group-item" data-jqyoui-options="{revert: 'invalid'}">{{item.firstName}}
+                        <small class="text-muted">
+                            <em>{{item.role}}</em>
+                        </small>
+                        <input ng-click="deselectOthers('defaultList')" ng-model="item.selected" ng-true-value="true" ng-false-value="false" type="checkbox" class="pull-right">
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6 col-sm-offset-2">
+                <div class="row" ng-model="lists">
+                    <div class="list-group dl col-sm-5 col-sm-offset-1" ng-repeat="list in lists" id="dl{{list.id}}" data-drop="true" ng-model="list.items" data-jqyoui-options="{accept:'.ui-draggable'}"
+                        jqyoui-droppable="{multiple:true,onDrop:dropped(list)}">
+                        <a href="#" class="list-group-item active">
+                            <span data-target="#{{list.id}}" data-toggle="modal">{{list.title}}</span>
+                            <span style="float:right" ng-click="removeList(list)" class="glyphicon glyphicon-remove"></span>
+                        </a>
+                        <div class="modal fade" id="{{list.id}}" role="dialog">
+                            <div class="modal-dialog">
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Edit List Title</h4>
+                                    </div>
+                                    <div class="modal-body form-group">
+                                        <label for="title">New Title:</label>
+                                        <input type="text" value="{{list.title}}" class="form-control" id="tc{{list.id}}">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" ng-click="changeTitle(list)" data-dismiss="modal">Apply</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>						
+                        <a ng-model="list.items" ng-repeat="user in list.items" data-drop="true" jqyoui-draggable="{index: {{$index}},animate:true,onStop: stopDrag(list, user)}"
+                            href="javascript:;" data-id="{{user.id}}" data-drag="true" class="list-group-item" data-jqyoui-options="{revert: 'invalid'}">{{user.firstName}}
+                            <small class="text-muted">
+                                <em>{{user.role}}</em>
+                            </small>
+                            <input ng-click="deselectOthers('dl'+list.id)" data-drop="false" ng-model="user.selected" value="{{user.id}}" ng-true-value="true" ng-false-value="false" type="checkbox" class="pull-right">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-4">
+                <div class="list-group" ng-model="trashList" data-drop="true" data-jqyoui-options="{accept: '.list-group-item'}" jqyoui-droppable="{multiple:true}">
+                    <a href="#" class="list-group-item active">Trash</a>
+                    <a ng-model="trashList" ng-repeat="user in trashList" data-drop="true" jqyoui-draggable="{index: {{$index}},animate:true}"
+                        href="javascript:;" data-id="{{user.id}}" data-drag="true" class="list-group-item" data-jqyoui-options="{revert: 'invalid'}">{{user.firstName}}
+                        <small class="text-muted">
+                            <em>{{user.role}}</em>
+                        </small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html> 
