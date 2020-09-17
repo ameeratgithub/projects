@@ -1,0 +1,10 @@
+1. Hafiz Plastic Centre
+
+                Url: hafizplasticcentre.herokuapp.com
+                Credentials for Admin:  admin@hpc123 , hpc123
+                Credentials for Cashier: cashier@hpc123, pak123
+            
+2. Attendance Management
+
+                Url: https://attendmanage.herokuapp.com
+                Credentials: *any*, *any*
